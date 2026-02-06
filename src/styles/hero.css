@@ -1,0 +1,56 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+
+  background: radial-gradient(circle at top, #0f2027, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+
+.hero-card {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 18px;
+  padding: 60px 80px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+}
+
+.hero-card h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.hero-card h1 span {
+  color: #3fffe0;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #7fffd4;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+}
+
+.cta-btn {
+  padding: 14px 36px;
+  font-size: 1rem;
+  color: #3fffe0;
+  background: transparent;
+  border: 2px solid #3fffe0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #3fffe0;
+  color: #000;
+  box-shadow: 0 0 20px #3fffe0;
+}
