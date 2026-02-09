@@ -51,3 +51,6 @@
   cursor: pointer;
   font-size: 0.9rem;
 }
+.back-link:hover {
+  text-decoration: underline;
+}

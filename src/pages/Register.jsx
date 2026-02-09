@@ -1,80 +1,84 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Register.css";
 
 const Register = () => {
-  const navigate = useNavigate();
-
-  const [formData, setFormData] = useState({
-    name: "",
-    classYear: "",
-    mobile: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
+    const navigate = useNavigate();
+    useEffect(() => {
+        const existingUser = localStorage.getItem("studentData");
+        if (existingUser) {
+            alert("You are already registered");
+            
+        }
+    }, []);
+    const [formData, setFormData] = useState({
+        name: "",
+        classYear: "",
+        mobile: "",
     });
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
 
-    // Basic validation
-    if (!formData.name || !formData.classYear || !formData.mobile) {
-      alert("Please fill all details");
-      return;
-    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-    // Store in localStorage
-    localStorage.setItem("studentData", JSON.stringify(formData));
+        // Basic validation
+        if (!formData.name || !formData.classYear || !formData.mobile) {
+            alert("Please fill all details");
+            return;
+        }
 
-    alert("Registration Successful");
+        // Store in localStorage
+        localStorage.setItem("studentData", JSON.stringify(formData));
 
-    // Optional redirect (future dashboard)
-    // navigate("/dashboard");
-  };
+        alert("Registration Successful");
 
-  return (
-    <div className="register-page">
-      <form className="register-card" onSubmit={handleSubmit}>
-        <h2>Student Login</h2>
+    };
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          value={formData.name}
-          onChange={handleChange}
-        />
+    return (
+        <div className="register-page">
+            <form className="register-card" onSubmit={handleSubmit}>
+                <h2>Student Login</h2>
 
-        <input
-          type="text"
-          name="classYear"
-          placeholder="Class / Year"
-          value={formData.classYear}
-          onChange={handleChange}
-        />
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
 
-        <input
-          type="tel"
-          name="mobile"
-          placeholder="Mobile Number"
-          value={formData.mobile}
-          onChange={handleChange}
-        />
+                <input
+                    type="text"
+                    name="classYear"
+                    placeholder="Class / Year"
+                    value={formData.classYear}
+                    onChange={handleChange}
+                />
 
-        <button type="submit" className="register-btn">
-          Register & Login
-        </button>
+                <input
+                    type="tel"
+                    name="mobile"
+                    placeholder="Mobile Number"
+                    value={formData.mobile}
+                    onChange={handleChange}
+                />
 
-        <p className="back-link" onClick={() => navigate("/")}>
-          Back to Home
-        </p>
-      </form>
-    </div>
-  );
+                <button type="submit" className="register-btn">
+                    Register & Login
+                </button>
+
+                <p className="back-link" onClick={() => navigate("/")}>
+                    Back to Home
+                </p>
+            </form>
+        </div>
+    );
 };
 
 export default Register;
