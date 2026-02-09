@@ -1,12 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import Hero from "./components/Hero";
-import Register from "./pages/Register";
+import Home from "./pages/Home";
+import LandingPage1 from "./pages/LandingPage1";
+import GamePage from "./pages/GamePage";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Hero />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/round1" element={<LandingPage1 />} />
+      <Route path="/round1/game" element={<GamePage />} />
     </Routes>
   );
 }
