@@ -1,0 +1,367 @@
+:root {
+  color-scheme: dark;
+}
+
+.round-one-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #1b2430, #0d1117 55%);
+  color: #f5f6fa;
+  padding: 40px 20px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+.round-one-card,
+.round-one-game {
+  width: min(860px, 100%);
+  background: rgba(13, 17, 23, 0.9);
+  border: 1px solid rgba(79, 93, 117, 0.4);
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(5, 8, 13, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Landing card extras ── */
+.round-one-welcome {
+  color: #7af3ff;
+  font-size: 1rem;
+  margin: -8px 0 0;
+}
+
+.round-one-welcome strong {
+  color: #fff;
+}
+
+.round-one-rules {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #c7d0dd;
+  font-size: 0.92rem;
+}
+
+.round-one-rules li {
+  padding: 8px 14px;
+  background: rgba(39, 208, 247, 0.06);
+  border-radius: 8px;
+  border: 1px solid rgba(39, 208, 247, 0.12);
+}
+
+/* ── Shared text ── */
+.round-one-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  color: #6ed3ff;
+  margin: 0;
+}
+
+.round-one-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin: 0;
+}
+
+.round-one-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #c7d0dd;
+  margin: 0;
+}
+
+/* ── Buttons ── */
+.round-one-button,
+.round-one-next {
+  background: linear-gradient(135deg, #27d0f7, #6e6bff);
+  color: #0b0d12;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.round-one-button:hover,
+.round-one-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(39, 208, 247, 0.35);
+}
+
+/* ── Header ── */
+.round-one-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.round-one-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.round-one-timer {
+  background: #121923;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(109, 122, 145, 0.4);
+  text-align: center;
+  min-width: 120px;
+  flex-shrink: 0;
+  transition: border-color 0.3s;
+}
+
+.round-one-timer span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #8aa4c1;
+}
+
+.round-one-timer strong {
+  font-size: 1.4rem;
+  color: #7af3ff;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-danger {
+  border-color: rgba(255, 80, 80, 0.6) !important;
+  animation: pulse-danger 1s infinite;
+}
+
+.timer-danger strong {
+  color: #ff6b6b !important;
+}
+
+@keyframes pulse-danger {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 80, 80, 0); }
+  50% { box-shadow: 0 0 0 4px rgba(255, 80, 80, 0.25); }
+}
+
+/* ── Progress ── */
+.round-one-progress {
+  width: 100%;
+  height: 8px;
+  background: #111822;
+  border-radius: 999px;
+  border: 1px solid rgba(109, 122, 145, 0.3);
+  overflow: hidden;
+}
+
+.round-one-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #27d0f7, #6e6bff);
+  transition: width 0.4s ease;
+}
+
+/* ── Question meta ── */
+.round-one-question-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.round-one-question-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.round-one-question-top p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #8aa4c1;
+}
+
+.round-one-lang-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(110, 107, 255, 0.18);
+  border: 1px solid rgba(110, 107, 255, 0.4);
+  color: #a8a6ff;
+}
+
+.round-one-question-meta h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.round-one-question-meta span {
+  color: #97a6bf;
+  font-size: 0.95rem;
+}
+
+/* ── Code box ── */
+.round-one-code-box {
+  background: #0b0f16;
+  border-radius: 14px;
+  padding: 24px;
+  border: 1px solid rgba(109, 122, 145, 0.25);
+  overflow-x: auto;
+  line-height: 2;
+  font-family: "Fira Code", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+.round-one-code-box pre,
+.round-one-code-box code {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.round-one-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  margin: 0 4px;
+  padding: 3px 12px;
+  border-radius: 6px;
+  border: 1.5px dashed #4f5d75;
+  background: rgba(39, 208, 247, 0.07);
+  color: #8aa4c1;
+  font-weight: 500;
+  cursor: default;
+  transition: border-color 0.2s, background 0.2s;
+  vertical-align: middle;
+}
+
+.round-one-slot.filled {
+  border-style: solid;
+  border-color: #27d0f7;
+  background: rgba(39, 208, 247, 0.15);
+  color: #f5f6fa;
+  cursor: pointer;
+}
+
+.round-one-slot.filled:hover {
+  background: rgba(255, 80, 80, 0.15);
+  border-color: #ff6b6b;
+}
+
+/* ── Options ── */
+.round-one-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.round-one-option {
+  background: #131b26;
+  border: 1px solid rgba(109, 122, 145, 0.4);
+  border-radius: 10px;
+  padding: 10px 18px;
+  cursor: grab;
+  color: #d8e4f2;
+  font-weight: 500;
+  font-size: 0.92rem;
+  font-family: "Fira Code", monospace;
+  transition: border-color 0.2s ease, transform 0.15s ease, background 0.2s;
+  user-select: none;
+}
+
+.round-one-option:active {
+  cursor: grabbing;
+  transform: scale(0.96);
+}
+
+.round-one-option:hover {
+  border-color: #27d0f7;
+  background: rgba(39, 208, 247, 0.08);
+}
+
+.round-one-next {
+  width: 100%;
+  margin-top: 4px;
+}
+
+/* ── Complete screen ── */
+.round-one-complete {
+  text-align: center;
+  padding: 40px 20px;
+  background: #0b0f16;
+  border-radius: 16px;
+  border: 1px solid rgba(109, 122, 145, 0.3);
+}
+
+.complete-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.round-one-complete h2 {
+  margin: 0 0 8px;
+  font-size: 1.9rem;
+}
+
+.complete-name {
+  font-size: 1.1rem;
+  color: #7af3ff;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.round-one-complete p {
+  margin-bottom: 10px;
+  color: #97a6bf;
+}
+
+.complete-score {
+  font-size: 3rem;
+  color: #7af3ff;
+  display: block;
+}
+
+.complete-sub {
+  font-size: 0.9rem;
+  color: #6b7f99;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .round-one-card,
+  .round-one-game {
+    padding: 24px 18px;
+  }
+
+  .round-one-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .round-one-timer {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .round-one-slot {
+    min-width: 80px;
+    font-size: 0.82rem;
+  }
+
+  .round-one-code-box {
+    font-size: 0.8rem;
+  }
+}
